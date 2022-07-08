@@ -1,0 +1,11 @@
+
+body {
+    background: linear-gradient(70deg, #e6e6e6, #f7f7f7);
+    color: #5f5f65;
+    min-height: 100vh;
+  }
+  
+.container .h1 {
+    position:absolute;
+    top: 50px;
+}
