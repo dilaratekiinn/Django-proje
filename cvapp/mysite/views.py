@@ -24,5 +24,6 @@ def index (request):
     return render (request,'mysite/navbar.html',context)
 
 
+    
 
     
