@@ -3,8 +3,11 @@ from multiprocessing import context
 from django.shortcuts import render
 from .forms import UserForm
 from .forms import AdvertForm
+from mysite.models import User
+from mysite.models import Advert
 from django.http import HttpResponse
 from django.template import loader
+from django.views.generic import ListView
 from django.core.files.storage import FileSystemStorage
 
 
@@ -38,7 +41,7 @@ def advert_new(request):
             form.save()
             form = AdvertForm()
             
-            
+     
         else : 
          form = AdvertForm()
          
@@ -48,3 +51,14 @@ def advert_new(request):
   
     
 
+def list_view(request):
+# dictionary for initial data with
+    # field names as keys
+  context ={}
+ 
+    # add the dictionary during initialization
+  context["dataset"] = Advert.objects.all()
+         
+  return render(request, "mysite/list_view.html", context)
+    
+    

@@ -16,17 +16,15 @@ Including another URLconf
 from turtle import home
 from django.contrib import admin
 from django.urls import path , include
+from mysite.views import list_view
 from mysite.views import advert_new
-
-
-
-
 
 
 urlpatterns = [
     
     path('mysite/',include('mysite.urls')),
     path('admin/', admin.site.urls),
-    path ('mysite/advert_new',advert_new )
+    path ('mysite/advert_new',advert_new ),
+    path('mysite/list_view',list_view)
    
 ]
